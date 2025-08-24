@@ -13,6 +13,21 @@ It provides a way to uncover **semantically meaningful subgoals** (e.g., passeng
 
 ---
 
+## Motivation
+In reinforcement learning, agents often struggle when **state representations are incomplete** or **reward signals are sparse/delayed**.  
+
+For example, in the **Taxi-v3** environment:  
+- The default state space lacks **wall information**, which is crucial for successful navigation.  
+- A vanilla DQN baseline sometimes fails to converge (2 out of 10 runs).  
+- When wall information is manually added, DQN converges consistently — but such interventions are impractical in real-world settings.  
+
+**VRAIL addresses this challenge** by learning **feature-based reward shaping functions** that uncover latent subgoals (e.g., “passenger is in taxi”), stabilizing training **without modifying the environment**.
+
+![Effect of Wall Information](img/wall_info.png)  
+*Figure: Effect of wall information on DQN convergence. Without wall info, DQN fails in some runs; VRAIL achieves stability without modifying the environment.*
+
+---
+
 ## Key Features
 - **Bi-level Optimization**:  
   - **RL Stage**: Learns policies with shaped rewards.  
@@ -72,6 +87,30 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
   - DQN: 8/10 runs  
   - Linear VRAIL: 10/10 runs  
   - Quadratic VRAIL: 9/10 runs  
+
+---
+
+### 📈 Training Stability Comparison Across Models
+VRAIL improves convergence robustness compared to DQN:  
+- **Linear VRAIL**: Stable but slightly slower.  
+- **Quadratic VRAIL**: Stable and faster.  
+
+![Training Stability](img/training_stability.png)
+
+---
+
+### Effect of Reward Shaping Using a Pretrained Linear VRAIL Model
+A pretrained Linear VRAIL shaping function, when transferred to DQN, improves stability and eliminates non-converging runs.  
+
+![Reward Shaping](img/reward_shaping.png)
+
+---
+
+### Visualization of Learned Parameters of DL Stage
+- **Linear VRAIL**: Feature weights highlight **passenger possession** as the most important subgoal.  
+- **Quadratic VRAIL**: Heatmap of pairwise feature interactions shows strong coupling between **passenger and destination features**.  
+
+![Learned Parameters](img/learned_params.png)
 
 ---
 
