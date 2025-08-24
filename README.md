@@ -1,6 +1,6 @@
 # VRAIL: Vectorized Reward-based Attribution for Interpretable Learning
 
-Official implementation of **_Robust Molecular Property Prediction via Densifying Scarce Labeled Data_ [[arXiv]](https://arxiv.org/abs/2506.16014) [[slide]](https://drive.google.com/file/d/1th0FzY0WbpATT7SdJMwVqOIlV8qA40Kv/view?usp=sharing)**.
+Official implementation of **_VRAIL: Vectorized Reward-based Attribution for Interpretable Learning_ [[arXiv]](https://arxiv.org/abs/2506.16014) [[slide]](https://drive.google.com/file/d/1th0FzY0WbpATT7SdJMwVqOIlV8qA40Kv/view?usp=sharing)**.
 
 > 🏫 [Jina Kim*](https://jina0218.github.io/), 🏫 [Youjin Jang*](https://github.com/jangyoujin0917), 🏫 [Jeongjin Han*](https://github.com/Jeong-jin-Han)
 
