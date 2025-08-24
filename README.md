@@ -4,8 +4,7 @@ Official implementation of **_VRAIL: Vectorized Reward-based Attribution for Int
 
 > 🏫 [Jina Kim*](https://jina0218.github.io/), 🏫 [Youjin Jang*](https://github.com/jangyoujin0917), 🏫 [Jeongjin Han*](https://github.com/Jeong-jin-Han)
 
-> *Equal contribution
-> 🏫 [KAIST](https://www.kaist.ac.kr/en/)
+> 🏫 [KAIST](https://www.kaist.ac.kr/en/), *Equal contribution
 
 ![Concept Figure](img/cs377.png)
 
