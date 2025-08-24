@@ -36,10 +36,8 @@ VRAIL alternates between two stages:
 
 2. **DL Stage**  
    Learns interpretable value functions:  
-   - **Linear VRAIL**:  
-     `V̂(x_s; w) = wᵀ x_s`
-   - **Quadratic VRAIL**:  
-     `V̂(x_s; W) = x_sᵀ W x_s`
+   - **Linear VRAIL**:  `V̂(x_s; w) = wᵀ x_s`
+   - **Quadratic VRAIL**:  `V̂(x_s; W) = x_sᵀ W x_s`
 
    - Attributes importance to features and feature interactions.  
 
