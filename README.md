@@ -131,6 +131,8 @@ diagrams).
 (Fig 4), α-scheduling trials, environment variants trials.
 
 ## Citation
+
+```BibTeX
 @misc{kim2025vrailvectorizedrewardbasedattribution,
       title={VRAIL: Vectorized Reward-based Attribution for Interpretable Learning}, 
       author={Jina Kim and Youjin Jang and Jeongjin Han},
@@ -140,3 +142,4 @@ diagrams).
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2506.16014}, 
 }
+```
