@@ -29,9 +29,7 @@ VRAIL alternates between two stages:
 
 1. **RL Stage**  
    Reward shaping with a potential function:
-   \[
-   R'(s, a, s') = R(s, a, s') + \gamma \hat{V}(x_{s'}; \theta) - \hat{V}(x_s; \theta)
-   \]
+   `R'(s, a, s') = R(s, a, s') + \gamma \hat{V}(x_{s'}; \theta) - \hat{V}(x_s; \theta)`
 
    - Uses any value-based RL algorithm (e.g., DQN).  
    - Encourages intermediate progress toward the final goal.  
@@ -39,13 +37,9 @@ VRAIL alternates between two stages:
 2. **DL Stage**  
    Learns interpretable value functions:  
    - **Linear VRAIL**:  
-     \[
-     \hat{V}(x_s; w) = w^\top x_s
-     \]  
+     `\hat{V}(x_s; w) = w^\top x_s`
    - **Quadratic VRAIL**:  
-     \[
-     \hat{V}(x_s; W) = x_s^\top W x_s
-     \]  
+     `\hat{V}(x_s; W) = x_s^\top W x_s`
 
    - Attributes importance to features and feature interactions.  
 
