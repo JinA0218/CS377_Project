@@ -8,8 +8,14 @@ Official implementation of **_VRAIL: Vectorized Reward-based Attribution for Int
 
 ![Concept Figure](img/cs377.png)
 
-VRAIL is a **bi-level reinforcement learning framework** that improves both **training stability** and **interpretability** by learning feature-based reward shaping functions.  
-It provides a way to uncover **semantically meaningful subgoals** (e.g., passenger possession in Taxi-v3) while maintaining policy invariance under potential-based reward transformations.
+We propose **VRAIL (Vectorized Reward-based Attribution for Interpretable Learning)**, a **bi-level framework for value-based reinforcement learning (RL)** that learns **interpretable weight representations** from state features.  
+VRAIL consists of two stages:  
+- a **deep learning (DL) stage** that fits an estimated value function using state features, and  
+- an **RL stage** that uses this to shape learning via **potential-based reward transformations**.  
+
+The estimator is modeled in either linear or quadratic form, allowing attribution of importance to individual features and their interactions. Empirical results on the **Taxi-v3 environment** demonstrate that VRAIL improves **training stability** and **convergence** compared to standard DQN, without requiring environment modifications. Further analysis shows that VRAIL uncovers semantically meaningful subgoals (such as passenger possession), highlighting its ability to produce **human-interpretable behavior**. Our findings suggest that VRAIL serves as a **general, model-agnostic framework** for reward shaping that enhances both learning and interpretability.
+
+
 
 ---
 
@@ -75,6 +81,19 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 ---
 
 ## Results
+- **Linear VRAIL**: Most stable (converged in all runs), but slightly slower.  
+- **Quadratic VRAIL**: Faster convergence and highly robust, though not as perfectly stable as Linear.  
+
+
+### Training Stability Comparison Across Models
+- VRAIL improves convergence robustness compared to DQN:  
+  - DQN: 8/10 runs  
+  - Linear VRAIL: 10/10 runs  
+  - Quadratic VRAIL: 9/10 runs  
+
+![Training Stability](img/training_stability.png)
+
+### Average epochs to reach reward thresholds (10 seeds, excluding top/bottom 2 outliers)
 
 | Reward Threshold | DQN | Linear VRAIL | Quadratic VRAIL |
 |------------------|-----|--------------|-----------------|
@@ -82,20 +101,6 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 | -5               | 612.17 | 643.17 | **562.83** |
 | 0                | 648.17 | 652.50 | **594.33** |
 | +5               | 717.67 | 735.83 | **660.17** |
-
-- **Convergence Stability**:  
-  - DQN: 8/10 runs  
-  - Linear VRAIL: 10/10 runs  
-  - Quadratic VRAIL: 9/10 runs  
-
----
-
-### 📈 Training Stability Comparison Across Models
-VRAIL improves convergence robustness compared to DQN:  
-- **Linear VRAIL**: Stable but slightly slower.  
-- **Quadratic VRAIL**: Stable and faster.  
-
-![Training Stability](img/training_stability.png)
 
 ---
 
