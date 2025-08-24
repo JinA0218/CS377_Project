@@ -67,7 +67,7 @@ This forms a **closed-loop bi-level optimization** between RL and DL stages.
 ---
 
 ## Experiments
-- **Environment**: [Taxi-v3 (Gymnasium)](https://gymnasium.farama.org/)  
+- **Environment**: [Taxi-v3 (Gymnasium)](https://gymnasium.farama.org/environments/toy_text/taxi/)  
 - **Baselines**: Compared against vanilla DQN.  
 - **Results**:
   - **Linear VRAIL**: Highest robustness (converged in 10/10 seeds).  
