@@ -120,11 +120,15 @@ A pretrained Linear VRAIL shaping function, when transferred to DQN, improves st
 ---
 
 ## Team Contributions
-- Jina Kim: Linear VRAIL backbone, DQN toy experiments, self-attention trials.
-
-- Youjin Jang: Core idea, visualization, slides & presentations.
-
-- Jeongjin Han: Interpretability analysis, reward transfer experiments, environment variants.
+All team members actively contributed to every stage of the project, including project concretization,
+trials for method improvement, slides, and report writing. Further individual contributions are detailed
+below.
+- Jina Kim : Backbone model implementation (Linear VRAIL), DQN toy experiment (Fig 1),
+self-attention based model trials.
+- Youjin Jang : Idea proposal (vectorized rewards), presentation, quiz creation, visualization (graphs,
+diagrams).
+- Jeongjin Han : Interpretation of learned parameters of DL stage, effect of shaped reward experiment
+(Fig 4), α-scheduling trials, environment variants trials.
 
 ## Citation
 @misc{kim2025vrailvectorizedrewardbasedattribution,
